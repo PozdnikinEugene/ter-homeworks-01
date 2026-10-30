@@ -34,6 +34,7 @@
 
 <details>
   <summary>Установка </summary>
+   
 ```
 cat <<EOF > ~/.terraformrc
 provider_installation {
