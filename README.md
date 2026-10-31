@@ -174,6 +174,21 @@ resource "docker_container" "nginx" {
 
 Отличный вопрос, он у меня тоже возник в ходе работы, а тут и отвечать придется мне.
 
+Если взять блок кода создания образа из нашего main.tf то в нем  за это отвечает третья строка `keep_locally = true`
+
+```
+1. resource "docker_image" "nginx" {
+2.  name         = "nginx:latest"
+3.  keep_locally = true
+4.  }
+```
+
+Документация говорит 
+keep_locally (Boolean) If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker local storage on destroy operation.
+![7](img/1-8-1.png)
+
+keep_locally (опциональный, булево) — если true, образ не будет удалён при операции terraform destroy. По умолчанию false.
+
 ---
 
 ### Задание 2
