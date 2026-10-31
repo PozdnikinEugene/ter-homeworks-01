@@ -78,6 +78,7 @@ EOF
 ![1](img/1-2-1.png)
 
 2. Изучите файл .gitignore. В каком terraform-файле, согласно этому .gitignore, допустимо сохранить личную, секретную информацию?(логины,пароли,ключи,токены итд)
+
 Судя по .gitignore таким является `personal.auto.tfvars`
 
 `personal.auto.tfvars` —  Используется для хранения значений переменных, которые автоматически загружаются при выполнении команд terraform plan, terraform apply или terraform init.
