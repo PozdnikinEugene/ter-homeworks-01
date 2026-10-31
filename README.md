@@ -208,9 +208,13 @@ provider "docker" {
 ![8](img/2-1.png)
 
 Файл [main.tf](main.tf)
-```
-
 
 
 ---
+
+### Задание 3
+
+![9](img/3-1.png)
+
+--
 
