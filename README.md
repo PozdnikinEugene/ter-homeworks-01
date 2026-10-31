@@ -32,10 +32,23 @@
 Уничтожьте созданные ресурсы с помощью terraform. Убедитесь, что все ресурсы удалены. Приложите содержимое файла terraform.tfstate.
 Объясните, почему при этом не был удалён docker-образ nginx:latest. Ответ ОБЯЗАТЕЛЬНО НАЙДИТЕ В ПРЕДОСТАВЛЕННОМ КОДЕ, а затем ОБЯЗАТЕЛЬНО ПОДКРЕПИТЕ строчкой из документации terraform провайдера docker. (ищите в классификаторе resource docker_image )
 
+Установка 
+
+
 <details>
-  <summary>Установка </summary>
+  <summary>Установка и настройка </summary>
+Установка 
    
+```bash
+wget https://mirror.selectel.ru/3rd-party/hashicorp-releases/terraform/1.12.2/terraform_1.12.2_linux_amd64.zip
+unzip terraform_1.12.2_linux_amd64.zip -d .
+sudo mv terraform /usr/local/bin/
+# terraform -version
+Terraform v1.12.2
 ```
+Настройка
+   
+```bash
 cat <<EOF > ~/.terraformrc
 provider_installation {
   network_mirror {
