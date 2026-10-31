@@ -22,7 +22,7 @@
 
 ---
 
-Задание 1
+Подготовка 
 
 
 Установка 
@@ -39,7 +39,7 @@ sudo mv terraform /usr/local/bin/
 # terraform -version
 Terraform v1.12.2
 ```
-Настройка
+Настройка terraform
    
 ```bash
 cat <<EOF > ~/.terraformrc
@@ -50,6 +50,19 @@ provider_installation {
   }
   direct {
     exclude = ["registry.terraform.io/*/*"]
+  }
+}
+EOF
+```
+
+Настройка tofu
+
+```
+rm -f ~/.tofurc ~/.terraformrc && cat << 'EOF' > ~/.tofurc
+provider_installation {
+  network_mirror {
+    url     = "https://terraform-mirror.yandexcloud.net/"
+    include = ["registry.opentofu.org/*/*", "registry.terraform.io/*/*"]
   }
 }
 EOF
