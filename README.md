@@ -136,6 +136,25 @@ C такими сообщениями приятно работать поско
 ```
 
 
+5. Выполните код. В качестве ответа приложите: исправленный фрагмент кода и вывод команды docker ps.
+
+Исправленный фрагмент кода
+
+```
+resource "docker_image" "nginx" {
+  name         = "nginx:latest"
+  keep_locally = true
+}
+
+resource "docker_container" "nginx" {
+  image = docker_image.nginx.image_id
+  name  = "example_${random_password.random_string.result}"
+```
+Вывод команды docker ps
+
+![5](img/1-5-1.img)
+
+Сразу поясню причину по которой имя контейнера отличается от значения random  - пересоздание ресурсов.  
 
 ---
 
